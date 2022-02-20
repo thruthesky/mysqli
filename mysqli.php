@@ -1,4 +1,19 @@
 <?php
+/**
+ * @file mysqli.php
+ */
+/**
+ * MySQLi
+ *
+ * 기본적인 사용법
+ *
+ * 먼저, require_once './mysqli/mysqli.php'; 와 같이 로드하고,
+ *  - connect() 함수로 DB 접속을 한다.
+ *  - 그 후, insert(), update(), select() 함수를 사용하면 된다.
+ *  - insert() 함수는 에러인 경우, false 를 리턴하며, 성공이면 number of affected rows 를 리턴하는데 보통 1 을 리턴한다.
+ *  - update() 함수는 에러인 경우 false 를 리턴한다. 성공이면 true 를 리턴한다.
+ *
+ */
 $mysqli = null;
 
 /**
