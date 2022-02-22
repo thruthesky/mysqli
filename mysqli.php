@@ -49,7 +49,12 @@ class MySQLiDatabase {
      * @return void
      *
      * @example
-     * connect("mariadb", "root", "Wc~Cx7", "wonderfulkorea");
+     * db()->connect('mariadb', 'wonderfulkorea', "...password...", 'wonderfulkorea');
+     *
+     * @example A 서버의 PHP docker container 에서 B 서버의 MariaDB docker container 로 접속하기.
+     *  단순히, 서버 호스트만 변경해 주면 된다.
+     *  아래에서 'wonderfulkorea.kr' 에 MariaDB docker container 가 있고, 아래와 같이 하면 그냥 접속이 된다.
+     * db()->connect('wonderfulkorea.kr', 'wonderfulkorea', "...password...", 'wonderfulkorea');
      */
     function connect(string $hostname, string $username, string $password, string $database) {
         $this->mysqli = new mysqli($hostname, $username, $password, $database);
